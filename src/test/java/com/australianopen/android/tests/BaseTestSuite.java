@@ -81,8 +81,8 @@ public class BaseTestSuite extends BaseSuite {
 			dc.setCapability("platformName", "Android");
 			dc.setCapability(AndroidMobileCapabilityType.AUTO_GRANT_PERMISSIONS, true);
 			dc.setCapability("autoAcceptAlerts", true);
-			dc.setCapability("appPackage", config.getKey("::Pakage name goes here"));
-			dc.setCapability("appActivity", config.getKey(":: Activity name goes here"));
+			dc.setCapability("appPackage", config.getKey("appPackage"));
+			dc.setCapability("appActivity", config.getKey("appActivity"));
 			driver = new AndroidDriver<WebElement>(new URL("http://127.0.0.1:4723/wd/hub"), dc);
 			log.info("Initilizing the android driver");
 			driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT, TimeUnit.SECONDS);
@@ -104,10 +104,10 @@ public class BaseTestSuite extends BaseSuite {
 		return "./Screenshots/" + uuid + ".png";
 	}
 
-	public void closeApp() {
-		log.info("Closing the application");
-		driver.closeApp();
-	}
+//	public void closeApp() {
+//		log.info("Closing the application");
+//		driver.closeApp();
+//	}
 
 	public void openApp() {
 		log.info("Launching the application");
