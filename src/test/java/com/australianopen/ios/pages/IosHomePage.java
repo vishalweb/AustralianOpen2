@@ -9,12 +9,11 @@ import com.australianopen.ios.locators.IosHomePageLocators;
 import com.australianopen.ios.locators.IosMorePageLocators;
 import com.australianopen.utils.LoggerHelper;
 import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 
 import io.appium.java_client.ios.IOSDriver;
 
 public class IosHomePage {
-	
-	private Logger log = LoggerHelper.getLogger(IosHomePage.class);
 	private IOSDriver<WebElement> _driver;
 	private ExtentTest testLog;
 	public static long DYNAMIC_WAIT=20;
@@ -27,7 +26,7 @@ public class IosHomePage {
 	public IosMorePage clickOnMoreOption(){
 		WebDriverWait wait= new WebDriverWait(_driver,DYNAMIC_WAIT);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(IosHomePageLocators.IOSMORE_OPTION));
-		log.info("Waiting for the element:"+ IosHomePageLocators.IOSMORE_OPTION);
+		testLog.log(LogStatus.INFO,"Waiting for the element:"+ IosHomePageLocators.IOSMORE_OPTION);
 		_driver.findElement(IosHomePageLocators.IOSMORE_OPTION).click();
 		return new IosMorePage(_driver,testLog);
 	}

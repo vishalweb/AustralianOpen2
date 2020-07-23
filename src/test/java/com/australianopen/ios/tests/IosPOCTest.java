@@ -2,9 +2,7 @@ package com.australianopen.ios.tests;
 
 import java.lang.reflect.Method;
 
-import org.apache.log4j.Logger;
 import org.testng.annotations.Test;
-
 import com.australianopen.ios.pages.IosConditionOfUsePage;
 import com.australianopen.ios.pages.IosFavoritesPage;
 import com.australianopen.ios.pages.IosHomePage;
@@ -13,18 +11,16 @@ import com.australianopen.ios.pages.IosPlayerInformationPage;
 import com.australianopen.ios.pages.IosPlayersPage;
 import com.australianopen.ios.pages.IosShopPage;
 import com.australianopen.utils.ConfigFileReader;
-import com.australianopen.utils.LoggerHelper;
-
+import com.relevantcodes.extentreports.LogStatus;
 import junit.framework.Assert;
 
-public class IosPOCTestCases extends IosBaseTestSuite{
-	private Logger log=LoggerHelper.getLogger(IosPOCTestCases.class);
+public class IosPOCTest extends IosBaseTestSuite{
 	public ConfigFileReader config=new ConfigFileReader();
 	
 	@Test
 	public void verifyContactFunctionalityCondition(Method method) throws Exception{
 		testLog=extent.startTest(this.getClass().getSimpleName(), method.getAnnotation(Test.class).description());
-		log.info("Executing verifyContactFunctionalityCondition test");
+		testLog.log(LogStatus.INFO,"Executing verifyContactFunctionalityCondition test");
 		IosHomePage homePage=new IosHomePage(_driver,testLog);
 		IosMorePage morePage=homePage.clickOnMoreOption();
 		morePage.validateMorePage();
@@ -47,7 +43,7 @@ public class IosPOCTestCases extends IosBaseTestSuite{
 	@Test
 	public void verifyFavoriteFunctionality(Method method) throws Exception{
 		testLog=extent.startTest(this.getClass().getSimpleName(), method.getAnnotation(Test.class).description());
-		log.info("Executing verifyFavoriteFunctionality test");
+		testLog.log(LogStatus.INFO,"Executing verifyFavoriteFunctionality test");
 		IosHomePage homePage=new IosHomePage(_driver,testLog);
 		IosMorePage morePage=homePage.clickOnMoreOption();
 		morePage.validateMorePage();
@@ -69,7 +65,7 @@ public class IosPOCTestCases extends IosBaseTestSuite{
 	@Test
 	public void verifyRegistrationFunctionalityInShopSection(Method method) throws Exception{
 		testLog=extent.startTest(this.getClass().getSimpleName(), method.getAnnotation(Test.class).description());
-		log.info("Executing verifyRegistrationFunctionalityInShopSection test");
+		testLog.log(LogStatus.INFO, "Executing verifyRegistrationFunctionalityInShopSection test");
 		IosHomePage homePage=new IosHomePage(_driver,testLog);
 		IosMorePage morePage=homePage.clickOnMoreOption();
 		morePage.validateMorePage();
@@ -88,7 +84,7 @@ public class IosPOCTestCases extends IosBaseTestSuite{
 	@Test
 	public void verifyCartAndCheckoutFunctionality(Method method) throws Exception{
 		testLog=extent.startTest(this.getClass().getSimpleName(), method.getAnnotation(Test.class).description());
-		log.info("Executing verifyCartAndCheckoutFunctionality test");
+		testLog.log(LogStatus.INFO, "Executing verifyCartAndCheckoutFunctionality test");
 		IosHomePage homePage=new IosHomePage(_driver,testLog);
 		IosMorePage morePage=homePage.clickOnMoreOption();
 		morePage.validateMorePage();

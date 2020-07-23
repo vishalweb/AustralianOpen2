@@ -2,12 +2,12 @@
 <suite name="Test Cases" verbose="1">
 	<test name="Test Cases">
 		<classes>
-		    <class name="com.australianopen.ios.tests"/>
+		    <class name="com.australianopen.ios.tests.IosPOCTest">
 		   <methods>
 		       <include name="verifyFavoriteFunctionality"/>
 		        <include name="verifyRegistrationFunctionalityInShopSection"/>
 		   </methods>
-		
+		</class>
 		</classes>
 	</test>
 

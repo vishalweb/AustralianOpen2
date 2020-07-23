@@ -9,12 +9,11 @@ import com.australianopen.ios.locators.IosPlayerInformationPageLocators;
 import com.australianopen.ios.locators.IosPlayersPageLocators;
 import com.australianopen.utils.LoggerHelper;
 import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 
 import io.appium.java_client.ios.IOSDriver;
 
 public class IosPlayersPage {
-	
-	private Logger log = LoggerHelper.getLogger(IosPlayersPage.class);
 	private IOSDriver<WebElement> _driver;
 	private ExtentTest testLog;
 	public static long DYNAMIC_WAIT=20;
@@ -27,14 +26,14 @@ public class IosPlayersPage {
 	public void searchAPlayer(String playerName){
 		WebDriverWait wait= new WebDriverWait(_driver,DYNAMIC_WAIT);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(IosPlayersPageLocators.IOSPLAYERS_FINDAPLAYER));
-		log.info("Waiting for the element:"+ IosPlayersPageLocators.IOSPLAYERS_FINDAPLAYER);
+		testLog.log(LogStatus.INFO,"Waiting for the element:"+ IosPlayersPageLocators.IOSPLAYERS_FINDAPLAYER);
 		_driver.findElement(IosPlayersPageLocators.IOSPLAYERS_FINDAPLAYER).sendKeys(playerName);
 	}
 	
 	public IosPlayerInformationPage clickOnSearchedPlayer(){
 		WebDriverWait wait= new WebDriverWait(_driver,DYNAMIC_WAIT);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(IosPlayersPageLocators.IOSPLAYERS_SEARCHEDPLAYER));
-		log.info("Waiting for the element:"+ IosPlayersPageLocators.IOSPLAYERS_SEARCHEDPLAYER);
+		testLog.log(LogStatus.INFO,"Waiting for the element:"+ IosPlayersPageLocators.IOSPLAYERS_SEARCHEDPLAYER);
 		_driver.findElement(IosPlayersPageLocators.IOSPLAYERS_SEARCHEDPLAYER).click();
 		return new IosPlayerInformationPage(_driver,testLog);
 	}
@@ -42,7 +41,7 @@ public class IosPlayersPage {
 	public IosFavoritesPage clickOnFavoritesOption(){
 		WebDriverWait wait= new WebDriverWait(_driver,DYNAMIC_WAIT);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(IosPlayersPageLocators.IOSPLAYERS_FAVORITES_OPTION));
-		log.info("Waiting for the element:"+ IosPlayersPageLocators.IOSPLAYERS_FAVORITES_OPTION);
+		testLog.log(LogStatus.INFO,"Waiting for the element:"+ IosPlayersPageLocators.IOSPLAYERS_FAVORITES_OPTION);
 		_driver.findElement(IosPlayersPageLocators.IOSPLAYERS_FAVORITES_OPTION).click();
 		return new IosFavoritesPage(_driver,testLog);
 	}

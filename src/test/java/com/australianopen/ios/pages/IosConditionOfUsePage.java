@@ -16,12 +16,12 @@ import com.australianopen.ios.locators.IosConditionOfUsePagelocators;
 import com.australianopen.ios.locators.IosMorePageLocators;
 import com.australianopen.utils.LoggerHelper;
 import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 
 import io.appium.java_client.ios.IOSDriver;
 
 public class IosConditionOfUsePage {
 	
-	private Logger log = LoggerHelper.getLogger(IosConditionOfUsePage.class);
 	private IOSDriver<WebElement> _driver;
 	private ExtentTest testLog;
 	public static long DYNAMIC_WAIT=20;
@@ -35,17 +35,17 @@ public class IosConditionOfUsePage {
 		boolean status=_driver.findElement(IosConditionOfUsePagelocators.IOSCONDITION_OF_USE_TEXT).isDisplayed();
 		try{
 			if(status){
-				log.info("More Page is displayed");
+				testLog.log(LogStatus.INFO,"More Page is displayed");
 			}
 		}catch(NoSuchElementException e){
-			log.info("More page is not displayed");
+			testLog.log(LogStatus.INFO,"More page is not displayed");
 		}
 	}
 	
 	public void clickOnSandwichIcon(){
 		WebDriverWait wait= new WebDriverWait(_driver,DYNAMIC_WAIT);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(IosConditionOfUsePagelocators.IOSCONDITION_OF_USE_SANDWICH_OPTION));
-		log.info("Waiting for the element:"+ IosConditionOfUsePagelocators.IOSCONDITION_OF_USE_SANDWICH_OPTION);
+		testLog.log(LogStatus.INFO,"Waiting for the element:"+ IosConditionOfUsePagelocators.IOSCONDITION_OF_USE_SANDWICH_OPTION);
 		_driver.findElement(IosConditionOfUsePagelocators.IOSCONDITION_OF_USE_SANDWICH_OPTION).click();
 		
 	}
@@ -53,21 +53,21 @@ public class IosConditionOfUsePage {
 	public void clickOnContact(){
 		WebDriverWait wait= new WebDriverWait(_driver,DYNAMIC_WAIT);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(IosConditionOfUsePagelocators.IOSCONDITION_OF_USE_CONTACT_OPTION));
-		log.info("Waiting for the element:"+ IosConditionOfUsePagelocators.IOSCONDITION_OF_USE_CONTACT_OPTION);
+		testLog.log(LogStatus.INFO,"Waiting for the element:"+ IosConditionOfUsePagelocators.IOSCONDITION_OF_USE_CONTACT_OPTION);
 		_driver.findElement(IosConditionOfUsePagelocators.IOSCONDITION_OF_USE_CONTACT_OPTION).click();
 	}
 	
 	public void InputFirstName(String FirstName){
 		WebDriverWait wait= new WebDriverWait(_driver,DYNAMIC_WAIT);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(IosConditionOfUsePagelocators.IOSCONDITION_OF_USE_CONTACT_FIRSTNAME));
-		log.info("Waiting for the element:"+ IosConditionOfUsePagelocators.IOSCONDITION_OF_USE_CONTACT_FIRSTNAME);
+		testLog.log(LogStatus.INFO,"Waiting for the element:"+ IosConditionOfUsePagelocators.IOSCONDITION_OF_USE_CONTACT_FIRSTNAME);
 		_driver.findElement(IosConditionOfUsePagelocators.IOSCONDITION_OF_USE_CONTACT_FIRSTNAME).sendKeys(FirstName);
 	}
 
    public void InputLastName(String LastName){
 	WebDriverWait wait= new WebDriverWait(_driver,DYNAMIC_WAIT);
 	wait.until(ExpectedConditions.visibilityOfElementLocated(IosConditionOfUsePagelocators.IOSCONDITION_OF_USE_CONTACT_LASTNAME));
-	log.info("Waiting for the element:"+ IosConditionOfUsePagelocators.IOSCONDITION_OF_USE_CONTACT_LASTNAME);
+	testLog.log(LogStatus.INFO,"Waiting for the element:"+ IosConditionOfUsePagelocators.IOSCONDITION_OF_USE_CONTACT_LASTNAME);
 	_driver.findElement(IosConditionOfUsePagelocators.IOSCONDITION_OF_USE_CONTACT_LASTNAME).sendKeys(LastName);
 	}
    
@@ -75,14 +75,14 @@ public class IosConditionOfUsePage {
    scrollUpWithJavaScript("Privacy policy");
    WebDriverWait wait= new WebDriverWait(_driver,DYNAMIC_WAIT);
 	wait.until(ExpectedConditions.visibilityOfElementLocated(IosConditionOfUsePagelocators.IOSCONDITION_OF_USE_PRIVACYPOLICY));
-	log.info("Waiting for the element:"+ IosConditionOfUsePagelocators.IOSCONDITION_OF_USE_PRIVACYPOLICY);
+	testLog.log(LogStatus.INFO,"Waiting for the element:"+ IosConditionOfUsePagelocators.IOSCONDITION_OF_USE_PRIVACYPOLICY);
 	_driver.findElement(IosConditionOfUsePagelocators.IOSCONDITION_OF_USE_PRIVACYPOLICY).click();
    }
    
    public void clickOnSubmitButton(){
 	   WebDriverWait wait= new WebDriverWait(_driver,DYNAMIC_WAIT);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(IosConditionOfUsePagelocators.IOSCONDITION_OF_USE_SUBMITBTN));
-		log.info("Waiting for the element:"+ IosConditionOfUsePagelocators.IOSCONDITION_OF_USE_SUBMITBTN);
+		testLog.log(LogStatus.INFO,"Waiting for the element:"+ IosConditionOfUsePagelocators.IOSCONDITION_OF_USE_SUBMITBTN);
 		_driver.findElement(IosConditionOfUsePagelocators.IOSCONDITION_OF_USE_SUBMITBTN).click();
    }
    
@@ -106,10 +106,10 @@ public class IosConditionOfUsePage {
 	   boolean status=_driver.findElement(By.xpath("//XCUIElementTypeStaticText[@name='"+fieldName+"']")).isDisplayed();
 	   try{
 			if(status){
-				log.info("Validation message for "+fieldName+" is displayed");
+				testLog.log(LogStatus.INFO,"Validation message for "+fieldName+" is displayed");
 			}
 		}catch(NoSuchElementException e){
-			log.info("Validation message for "+fieldName+" is not displayed");
+			testLog.log(LogStatus.INFO,"Validation message for "+fieldName+" is not displayed");
 		}
    }
 }
