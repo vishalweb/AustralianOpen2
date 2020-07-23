@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Test Cases" verbose="1">
-	<test name="Test Cases">
+	<test name="iOS Test Cases">
 		<classes>
 		    <class name="com.australianopen.ios.tests.IosPOCTest">
 		   <methods>

@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All iOS and Android Scenarios">
-	<suite-files>
-		<suite-file path="androidtestng.xml"></suite-file>
-		<suite-file path="iOStestng.xml"></suite-file>
-	</suite-files>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Test Cases" verbose="1">
+	<test name="Android Test Cases">
+		<classes>
+		    <class name="com.australianopen.android.tests.AndroidPOCTest">
+		</class>
+		</classes>
+	</test>
 </suite>
