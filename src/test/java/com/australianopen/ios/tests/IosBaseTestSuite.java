@@ -55,8 +55,8 @@ public class IosBaseTestSuite extends BaseSuite {
 		} finally {
 			extent.endTest(testLog);
 			extent.flush();
-			_driver.quit();
-		}
+		//	_driver.quit();
+	}
 
 	}
 
@@ -77,13 +77,10 @@ public class IosBaseTestSuite extends BaseSuite {
 			log.info("Executing Desired Capabilities");
 			capabilities.setCapability("platformName", config.getKey("platformname"));
 			capabilities.setCapability("platformVersion", config.getKey("platformversion"));
-			capabilities.setCapability("xcodeSigningId", config.getKey("xcodeSigningId"));
-			capabilities.setCapability("xcodeOrgId", config.getKey("xcodeOrgId"));
 			capabilities.setCapability("automationName", "XCUITest");
 			capabilities.setCapability("bundleId", config.getKey("bundleId"));
 			capabilities.setCapability("device", "iPhone");
 			capabilities.setCapability("autoGrantPermissions", true);
-			capabilities.setCapability(MobileCapabilityType.APP, config.getKey("appBundleId"));
 			capabilities.setCapability("deviceName", config.getKey("devicename"));
 			capabilities.setCapability("udid", config.getKey("udid"));
 			_driver = new IOSDriver<WebElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
@@ -104,7 +101,7 @@ public class IosBaseTestSuite extends BaseSuite {
 	public void closeApp() {
 		_driver.closeApp();
 	}
-
+	
 	public void scrollUp() {
 		JavascriptExecutor js = (JavascriptExecutor) _driver;
 		HashMap<String, String> scrollObject = new HashMap<String, String>();
@@ -117,6 +114,15 @@ public class IosBaseTestSuite extends BaseSuite {
 		HashMap<String, String> scrollObject = new HashMap<String, String>();
 		scrollObject.put("direction", "up");
 		js.executeScript("mobile: scroll", scrollObject);
+	}
+
+	
+	public void scrollUpWithJavaScript(String text){
+		JavascriptExecutor js = (JavascriptExecutor) _driver;
+        HashMap<Object, Object> scrollObject = new HashMap<>();
+        scrollObject.put("predicateString", "value == '" + text + "'");
+        scrollObject.put("direction", "up");
+             js.executeScript("mobile: scroll", scrollObject);
 	}
 
 }
