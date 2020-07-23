@@ -1,14 +1,11 @@
 package com.australianopen.android.pages;
 
-import org.apache.log4j.Logger;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import com.australianopen.android.locators.ConditionsOfUseAndroidLocators;
-import com.australianopen.utils.LoggerHelper;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
@@ -19,7 +16,6 @@ public class ConditionsOfUsePage{
 	private AndroidDriver<WebElement> driver;
 	ExtentTest testLog;
 	public static long DYNAMIC_WAIT=40;
-	private Logger log = LoggerHelper.getLogger(ConditionsOfUsePage.class);
 	
 	public ConditionsOfUsePage(AndroidDriver<WebElement> driver,ExtentTest testLog)  {
 		this.driver = driver;

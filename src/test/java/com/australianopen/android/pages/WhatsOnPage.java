@@ -29,7 +29,7 @@ public class WhatsOnPage {
 	
 	public MorePage clickOnMoreButton() {
 		try {
-			testLog.log(LogStatus.INFO, "Clicking on Skip All button in Welcome page");
+			testLog.log(LogStatus.INFO, "Clicking on More button in WhatsOn page");
 			log.info("Clicking on Skip All button in Welcome page");
 			WebDriverWait wait = new WebDriverWait(driver, DYNAMIC_WAIT);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(WhatsOnPageAndroidLocators.WHATSON_MORE));

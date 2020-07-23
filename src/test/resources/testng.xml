@@ -2,9 +2,7 @@
 <suite name="Test Cases" verbose="1">
 	<test name="Test Cases">
 		<classes>
-		    <class name="Class name goes here"/>
-		
+		    <class name="com.australianopen.android.tests.AndroidPOCScenariosTest" />
 		</classes>
 	</test>
-
 </suite>

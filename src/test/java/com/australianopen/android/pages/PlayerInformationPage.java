@@ -6,8 +6,6 @@ import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import com.australianopen.android.locators.MorePageAndroidLocators;
 import com.australianopen.android.locators.PlayerInformationPageAndroidLocators;
 import com.australianopen.utils.LoggerHelper;
 import com.relevantcodes.extentreports.ExtentTest;

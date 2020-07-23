@@ -6,12 +6,7 @@ import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import com.australianopen.android.locators.ConditionsOfUseAndroidLocators;
-import com.australianopen.android.locators.MorePageAndroidLocators;
-import com.australianopen.android.locators.PlayerInformationPageAndroidLocators;
 import com.australianopen.android.locators.PlayersPageAndroidLocators;
-import com.australianopen.android.locators.WelcomeAndroidLocators;
 import com.australianopen.utils.LoggerHelper;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -77,7 +72,7 @@ public class PlayersPage {
 	public boolean verifyFavoritePlayer() {
 		boolean status = false;
 		try {
-			testLog.log(LogStatus.INFO, "Verifying Sign Out verification message in menu Page");
+			testLog.log(LogStatus.INFO, "Verifying Favorite player");
 			WebDriverWait wait = new WebDriverWait(driver, DYNAMIC_WAIT);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(PlayersPageAndroidLocators.PLAYERS_FAVOURITESTAB_FAVPLAYER));
 			testLog.log(LogStatus.INFO, "Waiting for Signout Verification Message in Menu Page");

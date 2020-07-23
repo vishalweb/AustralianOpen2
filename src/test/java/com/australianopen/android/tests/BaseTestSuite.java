@@ -4,39 +4,23 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.net.URL;
-import java.util.NoSuchElementException;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
-
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-
 import com.australianopen.basesuite.BaseSuite;
-import com.australianopen.locators.AndroidLocators;
 import com.australianopen.utils.ConfigFileReader;
 import com.australianopen.utils.LoggerHelper;
 import com.relevantcodes.extentreports.LogStatus;
-import com.thoughtworks.selenium.Wait;
-
-import bsh.Capabilities;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.connection.ConnectionState;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
-
-import org.openqa.selenium.html5.Location;
 
 public class BaseTestSuite extends BaseSuite {
 
@@ -104,10 +88,10 @@ public class BaseTestSuite extends BaseSuite {
 		return "./Screenshots/" + uuid + ".png";
 	}
 
-//	public void closeApp() {
-//		log.info("Closing the application");
-//		driver.closeApp();
-//	}
+	public void closeApp() {
+		log.info("Closing the application");
+		driver.closeApp();
+	}
 
 	public void openApp() {
 		log.info("Launching the application");
