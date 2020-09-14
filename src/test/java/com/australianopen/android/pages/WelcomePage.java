@@ -26,8 +26,12 @@ public class WelcomePage {
 		this.testLog=testLog;
 	}
 
-public WhatsOnPage clickOnSkipAllButton() {
+public WhatsOnPage clickOnSkipAllButton() throws InterruptedException {
 		try {
+			Thread.sleep(5000);
+			String uiSelector = "new UiSelector().textMatches(\"Skip all\")";
+	        String command = "new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView("+ uiSelector + ");";
+	        driver.findElementByAndroidUIAutomator(command);
 			testLog.log(LogStatus.INFO, "Clicking on Skip All button in Welcome page");
 			WebDriverWait wait = new WebDriverWait(driver, DYNAMIC_WAIT);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(WelcomeAndroidLocators.WELCOME_SKIPALL));

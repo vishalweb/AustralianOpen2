@@ -53,7 +53,7 @@ public class BaseTestSuite extends BaseSuite {
 		} finally {
 			extent.endTest(testLog);
 			extent.flush();
-			driver.quit();
+		//	driver.quit();
 		}
 	}
 

@@ -49,40 +49,21 @@ public class MorePage {
 		return status;
 	}
 
-	public ConditionsOfUsePage clickOnConditionsOfUse() throws InterruptedException {
+
+	
+	public ShopPage clickOnShopOption() {
 		try {
-			String uiSelector = "new UiSelector().textMatches(\"Conditions of Use\")";
-	        String command = "new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView("+ uiSelector + ");";
-	        driver.findElementByAndroidUIAutomator(command);
-			testLog.log(LogStatus.INFO, "Clicking on Skip All button in Welcome page");
-			log.info("Clicking on Skip All button in Welcome page");
+			testLog.log(LogStatus.INFO, "Clicking on Shop in More page");
 			WebDriverWait wait = new WebDriverWait(driver, DYNAMIC_WAIT);
-			wait.until(ExpectedConditions.visibilityOfElementLocated(MorePageAndroidLocators.MORE_CONDITIONSOFUSE));
-			testLog.log(LogStatus.INFO,"Waiting for the element:"+MorePageAndroidLocators.MORE_CONDITIONSOFUSE);
-			log.info("Waiting for the element:"+MorePageAndroidLocators.MORE_CONDITIONSOFUSE);
-			driver.findElement(MorePageAndroidLocators.MORE_CONDITIONSOFUSE).click();		
+			wait.until(ExpectedConditions.visibilityOfElementLocated(MorePageAndroidLocators.MORE_SHOP));
+			testLog.log(LogStatus.INFO,"Waiting for the element:"+MorePageAndroidLocators.MORE_SHOP);
+			driver.findElement(MorePageAndroidLocators.MORE_SHOP).click();		
 		}catch(NoSuchElementException e) {
-			testLog.log(LogStatus.INFO,"Element not found:" +MorePageAndroidLocators.MORE_CONDITIONSOFUSE);
-			log.info("Element not found:" +MorePageAndroidLocators.MORE_CONDITIONSOFUSE);
+			testLog.log(LogStatus.INFO,"Element not found:" +MorePageAndroidLocators.MORE_SHOP);
 		}catch(TimeoutException e) {
-			testLog.log(LogStatus.INFO,"Timeout after waiting"+DYNAMIC_WAIT+ "seconds for:"+MorePageAndroidLocators.MORE_CONDITIONSOFUSE);
-			log.info("Timeout after waiting"+DYNAMIC_WAIT+ "seconds for:"+MorePageAndroidLocators.MORE_CONDITIONSOFUSE);
+			testLog.log(LogStatus.INFO,"Timeout after waiting"+DYNAMIC_WAIT+ "seconds for:"+MorePageAndroidLocators.MORE_SHOP);
 		}
-		return new ConditionsOfUsePage(driver, testLog);
+		return new ShopPage(driver, testLog);
 	}
 	
-	public PlayersPage clickOnPlayersOption() {
-		try {
-			testLog.log(LogStatus.INFO, "Clicking on Players in More page");
-			WebDriverWait wait = new WebDriverWait(driver, DYNAMIC_WAIT);
-			wait.until(ExpectedConditions.visibilityOfElementLocated(MorePageAndroidLocators.MORE_PLAYERS));
-			testLog.log(LogStatus.INFO,"Waiting for the element:"+MorePageAndroidLocators.MORE_PLAYERS);
-			driver.findElement(MorePageAndroidLocators.MORE_PLAYERS).click();		
-		}catch(NoSuchElementException e) {
-			testLog.log(LogStatus.INFO,"Element not found:" +MorePageAndroidLocators.MORE_PLAYERS);
-		}catch(TimeoutException e) {
-			testLog.log(LogStatus.INFO,"Timeout after waiting"+DYNAMIC_WAIT+ "seconds for:"+MorePageAndroidLocators.MORE_PLAYERS);
-		}
-		return new PlayersPage(driver, testLog);
-	}
 }

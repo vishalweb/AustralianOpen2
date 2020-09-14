@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2020-09-14T18:00:08 AEST" name="Test Cases" finished-at="2020-09-14T18:02:21 AEST" duration-ms="132159">
+    <groups>
+    </groups>
+    <test started-at="2020-09-14T18:00:08 AEST" name="Android Test Cases" finished-at="2020-09-14T18:02:21 AEST" duration-ms="132159">
+      <class name="com.australianopen.android.tests.AndroidPOCTest">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:com.australianopen.android.tests.AndroidPOCTest@3d1848cc]" started-at="2020-09-14T18:00:08 AEST" name="beforeSuite" finished-at="2020-09-14T18:00:08 AEST" duration-ms="198" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method is-config="true" signature="setUpDriver()[pri:0, instance:com.australianopen.android.tests.AndroidPOCTest@3d1848cc]" started-at="2020-09-14T18:00:08 AEST" name="setUpDriver" finished-at="2020-09-14T18:00:26 AEST" duration-ms="17201" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpDriver -->
+        <test-method signature="TC001(java.lang.reflect.Method)[pri:0, instance:com.australianopen.android.tests.AndroidPOCTest@3d1848cc]" started-at="2020-09-14T18:00:26 AEST" name="TC001" finished-at="2020-09-14T18:02:19 AEST" duration-ms="113249" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.australianopen.android.tests.AndroidPOCTest.TC001(java.lang.reflect.Method) throws java.lang.InterruptedException,java.io.UnsupportedEncodingException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC001 -->
+        <test-method is-config="true" signature="afterEveryTestEnds(org.testng.ITestResult, java.lang.reflect.Method)[pri:0, instance:com.australianopen.android.tests.AndroidPOCTest@3d1848cc]" started-at="2020-09-14T18:02:19 AEST" name="afterEveryTestEnds" finished-at="2020-09-14T18:02:21 AEST" duration-ms="1674" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TC001 status=SUCCESS method=AndroidPOCTest.TC001(java.lang.reflect.Method)[pri:0, instance:com.australianopen.android.tests.AndroidPOCTest@3d1848cc] output={null}]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void com.australianopen.android.tests.AndroidPOCTest.TC001(java.lang.reflect.Method) throws java.lang.InterruptedException,java.io.UnsupportedEncodingException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterEveryTestEnds -->
+      </class> <!-- com.australianopen.android.tests.AndroidPOCTest -->
+    </test> <!-- Android Test Cases -->
+  </suite> <!-- Test Cases -->
+</testng-results>

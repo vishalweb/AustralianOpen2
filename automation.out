@@ -1,0 +1,4 @@
+2020-09-14 18:09:99 INFO  BaseTestSuite:71 - Initilizing the android driver
+2020-09-14 18:09:116 INFO  BaseTestSuite:73 - Implicit wait applied on the driver: 15 in Seconds
+2020-09-14 18:09:30 INFO  WhatsOnPage:33 - Clicking on Skip All button in Welcome page
+2020-09-14 18:09:762 INFO  WhatsOnPage:37 - Waiting for the element:By.xpath: //android.widget.Button[@content-desc='More, tab, 5 of 5']
